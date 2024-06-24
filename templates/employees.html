@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{%block content %}
+<h2>Employee Data</h2>
+{% for emp_id, emp_data in Employee_data.items() %}
+    <main>
+        
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>{{emp_data['Name']}} </td>
+            </tr>
+            <tr>
+                <th>Age: </th>
+                <td>{{emp_data['Age']}}</td>
+            </tr>
+            <tr>
+                <th>Position: </th>
+                <td>{{emp_data['Position']}}</td>
+            </tr>
+            <!--<tr>
+                <th>Message</th>
+                <td>Hello, I would like to know more about your services.</td> 
+            </tr>
+            -->
+        </table>
+    </main>
+{% endfor %}
+
+{% endblock %}

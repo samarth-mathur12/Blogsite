@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to external CSS file -->
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+    <header>
+        <h2><a href="{{ url_for('home') }}">Home</a></h2>
+        <h2><a href="{{ url_for('about') }}">About</a></h2>
+        <h2><a href="{{ url_for('employees') }}">Employees</a></h2>
+        <h2><a href="{{ url_for('contact') }}">Contact Us</a></h2>
+        <h2><a href="{{ url_for('recommend') }}">Recommended Books</a></h2>
+        <h2><a href="{{ url_for('dashboard') }}">Dashboard</a></h2>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 My Webpage</p>
+    </footer>
+    {% block script %}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

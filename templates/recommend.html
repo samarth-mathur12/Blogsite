@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+
+{% block style %}
+.searchbox {
+  float: left; 
+  margin: 10px;
+}
+
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+}
+
+button {
+  padding: 10px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.fas.fa-search {
+  color: black;
+}
+
+{% endblock %}
+{% block content%}
+<div class="searchbox">
+  <form action="#">
+    <input type="text" placeholder="Search..." id="searchInput">
+    <button type="submit"><i class="fas fa-search"></i></button>
+  </form>
+</div>
+{%endblock%}
+
